@@ -1,43 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "linked_list.h"
 
+/*
 typedef struct Node{
     int value;
     struct Node* next;
-}Node;
+}Node; */
 
-void insertValue(Node** head, int value);
-void deleteValue(Node** head, int value);
-void printLinkedList(Node* head);
-
-
-int main(void){
-
-    Node* head = NULL;
-    printLinkedList(head);
-
-    // Inserting values
-    insertValue(&head, 10);
-    insertValue(&head, 20);
-    insertValue(&head, 30);
-    printLinkedList(head);
-    
-    deleteValue(&head, 20); // Apaga do meio (o 20): 30 liga diretamente ao 10
-    printLinkedList(head);
-    
-    deleteValue(&head, 30); // Apaga a nova cabeça (o 30): a cabeça passa a ser o 10
-    printLinkedList(head);
-    
-    deleteValue(&head, 99); // Tentativa de apagar um valor inexistente
-    deleteValue(&head, 10);
-    printLinkedList(head);
-    
-
-    return 0;   
-}
-
-
-void insertValue(Node** head, int val) // insertValue em modo LIFO (Last In Fist Out)
+void insertValue(Node** head, int val) /* insertValue() em modo LIFO (Last In Fist Out) */ 
 {
     Node *n = (Node *)malloc(sizeof(Node));
     if (n == NULL){

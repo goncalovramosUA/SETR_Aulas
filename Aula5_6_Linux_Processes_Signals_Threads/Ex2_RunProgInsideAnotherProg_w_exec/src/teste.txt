@@ -1,0 +1,5 @@
+SETR
+Teste do comando wc
+Linha tres com sete palavras no total
+Contagem de linhas palavras e bytes
+Ultima linha do ficheiro de teste

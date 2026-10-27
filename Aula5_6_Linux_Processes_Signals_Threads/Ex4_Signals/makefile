@@ -1,0 +1,50 @@
+# Compiler & Flags
+CC = gcc
+CFLAGS = -Wall -Wextra -std:c99
+LDFLAGS = -lm
+
+# PATHS
+SRC_FOLDER = src
+BUILD_FOLDER = build
+
+# MODULE
+MODULE = ex4
+TARGET = $(BUILD_FOLDER)/$(MODULE)
+
+.PHONY: all default clear ex4_1 ex4_2 ex4_3 ex4_4 ex4_5
+
+$(BUILD_FOLDER):
+	mkdir -p $(BUILD_FOLDER)
+
+$(TARGET)_1: $(SRC_FOLDER)/$(MODULE)_1.c | $(BUILD_FOLDER)
+	$(CC) $(LDFLAGS) $(SRC_FOLDER)/$(MODULE)_1.c -o $(TARGET)_1 $(LDFLAGS)
+
+$(TARGET)_2: $(SRC_FOLDER)/$(MODULE)_2.c | $(BUILD_FOLDER)
+	$(CC) $(LDFLAGS) $(SRC_FOLDER)/$(MODULE)_2.c -o $(TARGET)_2 $(LDFLAGS)
+
+$(TARGET)_3: $(SRC_FOLDER)/$(MODULE)_3.c | $(BUILD_FOLDER)
+	$(CC) $(LDFLAGS) $(SRC_FOLDER)/$(MODULE)_3.c -o $(TARGET)_3 $(LDFLAGS)
+
+$(TARGET)_4: $(SRC_FOLDER)/$(MODULE)_4.c | $(BUILD_FOLDER)
+	$(CC) $(LDFLAGS) $(SRC_FOLDER)/$(MODULE)_4.c -o $(TARGET)_4 $(LDFLAGS)
+
+$(TARGET)_5: $(SRC_FOLDER)/$(MODULE)_5.c | $(BUILD_FOLDER)
+	$(CC) $(LDFLAGS) $(SRC_FOLDER)/$(MODULE)_5.c -o $(TARGET)_5 $(LDFLAGS)
+
+ex4_1: $(TARGET)_1
+	./$(TARGET)_1
+
+ex4_2: $(TARGET)_2
+	./$(TARGET)_2
+
+ex4_3: $(TARGET)_3
+	./$(TARGET)_3
+
+ex4_4: $(TARGET)_4
+	./$(TARGET)_4
+
+ex4_5: $(TARGET)_5
+	./$(TARGET)_5
+
+clean: 
+	rm -rf $(BUILD_FOLDER)

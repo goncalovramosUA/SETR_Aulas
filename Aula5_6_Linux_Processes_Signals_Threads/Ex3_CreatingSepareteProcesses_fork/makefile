@@ -32,4 +32,4 @@ ex3_2: $(TARGET)_2
 	./$(TARGET)_2
 
 clean:
-	rm -rf &(BUILD_FOLDER)
+	rm -rf $(BUILD_FOLDER)
